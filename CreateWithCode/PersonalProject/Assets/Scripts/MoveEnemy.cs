@@ -7,7 +7,7 @@ public class MoveEnemy : MonoBehaviour
     // Start is called before the first frame update
     public float speed = 5.0f;
 
-    private float zDestroy = -10.0f;
+    private float zDestroy = -12.0f;
     private Rigidbody objectRb;
     void Start()
     {
