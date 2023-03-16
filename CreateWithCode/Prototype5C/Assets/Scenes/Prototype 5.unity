@@ -233,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &345440319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -360,6 +360,10 @@ PrefabInstance:
     - target: {fileID: 1758002909022086, guid: 1aeca1bd9f707c245a80c7f103d235f9, type: 3}
       propertyPath: m_Name
       value: Skull_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758002909022086, guid: 1aeca1bd9f707c245a80c7f103d235f9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4721473126883556, guid: 1aeca1bd9f707c245a80c7f103d235f9, type: 3}
       propertyPath: m_RootOrder
@@ -635,6 +639,8 @@ MonoBehaviour:
   - {fileID: 4879191987800290494, guid: cdb0212f43030cc418882bde5cf6877a, type: 3}
   - {fileID: 683213986058929732, guid: a43c46ec1189631409220aee07836258, type: 3}
   scoreText: {fileID: 2133785222}
+  gameOverText: {fileID: 345440320}
+  isGameActive: 0
 --- !u!4 &1031856584
 Transform:
   m_ObjectHideFlags: 0
@@ -744,7 +750,7 @@ GameObject:
   - component: {fileID: 1611319331}
   m_Layer: 0
   m_Name: Sensor
-  m_TagString: Untagged
+  m_TagString: Sensor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

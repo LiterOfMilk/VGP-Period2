@@ -8,7 +8,7 @@ public class Target : MonoBehaviour
     private GameManager gameManager;
     private float minSpeed = 13;
     private float maxSpeed = 16;
-    private float maxTorque = 10;
+    private float maxTorque = 10.0f;
     private float xRange = 4;
     private float ySpawnPos = -2;
 
@@ -27,19 +27,24 @@ public class Target : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(transform.position.y < -10)
+        {
+            Destroy(gameObject);
+            if(!gameObject.CompareTag("Bad"))
+            {
+                gameManager.GameOver();
+            }
+        }
     }
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        Instantiate(explostionParticle, transform.position, explostionParticle.transform.rotation);
-        gameManager.UpdateScore(pointValue);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Destroy(gameObject);
+        if(gameManager.isGameActive)
+        {
+            Destroy(gameObject);
+            Instantiate(explostionParticle, transform.position, explostionParticle.transform.rotation);
+            gameManager.UpdateScore(pointValue);
+        }
     }
 
     Vector3 RandomForce()
