@@ -30,9 +30,9 @@ public class Target : MonoBehaviour
         if(transform.position.y < -10)
         {
             Destroy(gameObject);
-            if(!gameObject.CompareTag("Bad"))
+            if(!gameObject.CompareTag("Bad") && gameManager.isGameActive)
             {
-                gameManager.GameOver();
+                gameManager.UpdateLives(-1);
             }
         }
     }
