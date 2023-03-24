@@ -39,7 +39,7 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(gameManager.isGameActive)
+        if(gameManager.isGameActive && !gameManager.paused)
         {
             Destroy(gameObject);
             Instantiate(explostionParticle, transform.position, explostionParticle.transform.rotation);
