@@ -37,15 +37,26 @@ public class Target : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void DestroyTarget()
     {
-        if(gameManager.isGameActive && !gameManager.paused)
+        if (gameManager.isGameActive)
         {
             Destroy(gameObject);
             Instantiate(explostionParticle, transform.position, explostionParticle.transform.rotation);
             gameManager.UpdateScore(pointValue);
         }
     }
+    
+
+//    private void OnMouseDown()
+//    {
+//        if(gameManager.isGameActive && !gameManager.paused)
+//        {
+//            Destroy(gameObject);
+//            Instantiate(explostionParticle, transform.position, explostionParticle.transform.rotation);
+//            gameManager.UpdateScore(pointValue);
+//        }
+//    }
 
     Vector3 RandomForce()
     {
@@ -59,4 +70,5 @@ public class Target : MonoBehaviour
     {
         return new Vector3(Random.Range(-xRange, xRange), ySpawnPos);
     }
+
 }
