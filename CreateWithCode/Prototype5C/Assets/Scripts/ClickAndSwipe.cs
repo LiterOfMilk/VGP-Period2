@@ -34,7 +34,7 @@ public class ClickAndSwipe : MonoBehaviour
                 swiping = true;
                 UpdateComponents();
             }
-            else if (Input.GetMouseButtonDown(0))
+            else if (Input.GetMouseButtonUp(0))
             {
                 swiping = false;
                 UpdateComponents();
@@ -58,11 +58,11 @@ public class ClickAndSwipe : MonoBehaviour
         trail.enabled = swiping;
         col.enabled = swiping;
     }
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.GetComponent<Target>())
         {
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
             collision.gameObject.GetComponent<Target>().DestroyTarget();
         }
     }
